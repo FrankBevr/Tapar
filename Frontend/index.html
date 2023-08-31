@@ -13,9 +13,22 @@
         overflow: hidden;
       }
     </style>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
   </head>
   <body>
-    hola
+    <div id="app">{{ message }}</div>
     <div id="container"></div>
+    <script>
+      const { createApp, ref } = Vue;
+
+      createApp({
+        setup() {
+          const message = ref("Hello vue!");
+          return {
+            message,
+          };
+        },
+      }).mount("#app");
+    </script>
   </body>
 </html>
