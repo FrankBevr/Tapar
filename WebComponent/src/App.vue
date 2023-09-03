@@ -3,7 +3,6 @@ import CoinTracker from "./components/coin-tracker.vue";
 </script>
 
 <template>
-  <h1>Hello World</h1>
   <CoinTracker></CoinTracker>
 </template>
 
