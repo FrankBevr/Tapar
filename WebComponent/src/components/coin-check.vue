@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import { toRefs } from "vue";
+import ArrowChecker from "./arrow-checker.vue";
 
 const props = defineProps<{
   coin: {
@@ -19,6 +20,7 @@ const { coin } = toRefs(props);
       <div class="price-info" key="coin.formatted">
         {{ coin.formatted }}
         <!--- arrow-checker -->
+        <ArrowChecker :amount="coin.money"></ArrowChecker>
       </div>
     </div>
   </Transition>
