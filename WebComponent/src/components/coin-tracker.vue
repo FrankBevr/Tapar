@@ -1,5 +1,6 @@
 <script lang="ts" setup>
-import { reactive } from "vue";
+import { reactive, ref } from "vue";
+import CoinCheck from "./coin-check.vue";
 const props = defineProps<{ pair?: string; background?: string }>();
 const url = "https://api.coinbase.com/v2/prices";
 
@@ -13,6 +14,7 @@ interface moneyFormat {
 }
 const btc = reactive({} as moneyFormat);
 const eth = reactive({} as moneyFormat);
+const date = ref("");
 
 async function grabPrices(pair: string): Promise<moneyFormat> {
   const btcInfo = await fetch(`${url}/${pair}/spot`);
@@ -37,32 +39,39 @@ async function setValues(): Promise<void> {
   eth.formatted = ethValue.formatted;
   eth.name = ethValue.name;
   eth.money = ethValue.money;
+  date.value = new Date().toString();
 }
 setValues();
 // setinterval(setValues, 10000)
 </script>
 
 <template>
-  <h1>Hello</h1>
   <section>
-    <span>{{ eth.formatted }}</span>
-    <span>{{ eth.name }}</span>
-    <span>{{ eth.money }}</span>
-    <br />
-    <span>{{ btc.formatted }}</span>
-    <span>{{ btc.name }}</span>
-    <span>{{ btc.money }}</span>
-
-    <!--CoinChecK :coin="btc"-->
+    <CoinCheck :coin="btc"></CoinCheck>
+    <CoinCheck :coin="eth"></CoinCheck>
   </section>
   <div class="sub">
     Last Update:
-    <span>{{
-      new Date().getHours() +
-      ":" +
-      new Date().getMinutes() +
-      ":" +
-      new Date().getSeconds()
-    }}</span>
+    <br />
+    <span>{{ date }}</span>
   </div>
 </template>
+<style>
+.sub {
+  font-size: 14px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  font-size: 2.5rem;
+  margin: 0 auto;
+  gap: 1rem;
+}
+</style>
