@@ -53,16 +53,4 @@ onMounted(() => {
     </svg>
   </div>
 </template>
-<style>
-svg {
-  width: 30px;
-}
-
-.up > path {
-  fill: green;
-}
-
-.down > path {
-  fill: red;
-}
-</style>
+<style></style>

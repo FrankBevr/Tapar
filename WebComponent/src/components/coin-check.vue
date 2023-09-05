@@ -25,29 +25,4 @@ const { coin } = toRefs(props);
     </div>
   </Transition>
 </template>
-<style>
-.inner {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  border: 1px solid black;
-  box-shadow: 0 3px 10px rgb(0 0 0 /0.2);
-  padding: 10px;
-}
-
-.v-enter-active,
-.v-leave-acitve {
-  transition: opacity 0.5s ease;
-}
-
-.v-enter-from,
-.v-leave-to {
-  opacity: 0;
-}
-
-.price-info {
-  display: flex;
-  gap: 1.2rem;
-}
-</style>
+<style></style>
