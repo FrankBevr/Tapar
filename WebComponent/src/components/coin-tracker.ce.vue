@@ -53,6 +53,7 @@ setInterval(setValues, 5000);
 </script>
 
 <template>
+  <slot name="header"></slot>
   <section>
     <CoinCheck :coin="btc"></CoinCheck>
     <CoinCheck :coin="eth"></CoinCheck>
@@ -63,6 +64,7 @@ setInterval(setValues, 5000);
     <br />
     <span>{{ date }}</span>
   </div>
+  <slot name="footer"></slot>
 </template>
 <style>
 .sub {
