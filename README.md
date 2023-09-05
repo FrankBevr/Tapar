@@ -1,5 +1,9 @@
 ### Tapar
 
+> ⚠️ Initial Idea is deprecated
+> Rewrite of README.md will follow.
+> New Setup is a web3 webcomponent with 8th Wall integration.
+
 Tapar is a small tapping game.  
 The app uses an AR Mask which projects a Mask on the person face.  
 Person A see the score of Person B.  
