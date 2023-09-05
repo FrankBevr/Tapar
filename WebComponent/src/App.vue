@@ -3,10 +3,7 @@ import CoinTracker from "./components/coin-tracker.vue";
 </script>
 
 <template>
-  <CoinTracker></CoinTracker>
+  <CoinTracker :pair="'SOL-USD'" background="yellow"></CoinTracker>
 </template>
 
 <style></style>
-// 1. create component // pass in some styles // pass in crypto values // styles
-// 2. Build web component // 3. Create brand HTML file // a. import web
-component

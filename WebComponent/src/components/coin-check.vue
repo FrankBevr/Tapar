@@ -20,7 +20,7 @@ const { coin } = toRefs(props);
       <div class="price-info" key="coin.formatted">
         {{ coin.formatted }}
         <!--- arrow-checker -->
-        <ArrowChecker :amount="coin.money"></ArrowChecker>
+        <ArrowChecker :amount="coin.money" :name="coin.name"></ArrowChecker>
       </div>
     </div>
   </Transition>
@@ -44,5 +44,10 @@ const { coin } = toRefs(props);
 .v-enter-from,
 .v-leave-to {
   opacity: 0;
+}
+
+.price-info {
+  display: flex;
+  gap: 1.2rem;
 }
 </style>
